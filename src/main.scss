@@ -1,0 +1,8 @@
+// custom.scss
+// we can over-write the variables in here!
+
+$primary: gray;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// We can put custom code in here .....
