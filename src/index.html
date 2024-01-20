@@ -8,9 +8,112 @@
     <link rel="stylesheet" href="main.css" />
     <script src="bootstrap.bundle.min.js"></script>
 
-    <title>Test set up with Bootstrap Local</title>
+    <title>Test set up with Bootstrap Local to Remote</title>
   </head>
   <body>
+    <header>
+      <nav class="navbar mt-5 fixed-top navbar-expand-lg navbar-light">
+        <!-- Navbar container-->
+
+        <div class="container" id="nav">
+          <a class="navbar-brand me-5" href="#">Sunny</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav align-items-end">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div
+        class="container-fluid"
+        style="
+          background-image: url('/src/assets/solarRoof2.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div class="container hero">
+          <div class="row">
+            <div
+              class="col d-flex flex-column justify-content-center align-items-center postcode-search"
+            >
+              <div class="tagline text-white text-center">
+                <h1><strong>Confused about Solar power?</strong></h1>
+                <h3>See the potential of solar for your home</h3>
+              </div>
+
+              <form class="postcode-form d-flex flex-column align-items-center">
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your postcode"
+                    aria-label="Building postcode"
+                    aria-describedby="basic-addon2"
+                  />
+                  <span class="input-group-text brandbtn" id="basic-addon2"
+                    >Postcode</span
+                  >
+                </div>
+
+                <button type="submit" class="btn brandbtn">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- how Sunny works section -->
+      <!-- margin top from hero section = ??? -->
+      <section class="howSunnyWorks">
+        <div class="container">
+          <div class="row">
+            <div class="col mt-3 border">
+              <div class="title d-flex justify-content-center mb-2">
+                <h2>How Sunny works</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col p-5">
+              <div class="row">
+                <div class="col-6 border">Icon</div>
+                <div class="col-6 border">Text</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <div class="container">
       <div class="row border mt-4">
         <button type="button" class="btn btn-primary col-1">Primary</button>

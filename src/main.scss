@@ -5,8 +5,42 @@ $primary: gray;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-@import url("https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap"); // We can put custom code in here .....
+// We can put custom code in here .....
+#nav {
+  background-color: rgba(255, 204, 0, 1);
+  border-radius: 1rem;
+  padding: 1rem;
+}
 
-:root {
-  --bs-body-font-family: "Xanh Mono", monospace;
+//#navbarNav {
+//outline: 1px solid blue;
+//}
+
+.hero {
+  height: 80vh;
+}
+
+.postcode-search {
+  //outline: 1px solid white;
+  margin-top: 11rem;
+}
+
+.postcode-form {
+  width: 25rem;
+  padding: 3rem;
+  //background-color: rgba(255, 255, 255, 0.5);
+  //border-radius: 2rem;
+}
+
+.brandbtn {
+  background: rgba(255, 204, 0, 1);
+}
+
+@media screen and (max-width: 576px) {
+  #nav {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    //font-size: 3.75rem;
+    //line-height: 4.125rem;
+  }
 }
