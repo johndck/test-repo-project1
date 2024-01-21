@@ -4,6 +4,7 @@
 $primary: gray;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 // We can put custom code in here .....
 #nav {
@@ -43,4 +44,8 @@ $primary: gray;
     //font-size: 3.75rem;
     //line-height: 4.125rem;
   }
+}
+
+.supporting-text {
+  width: 25rem;
 }

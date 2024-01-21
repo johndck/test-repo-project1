@@ -5,6 +5,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import "bootstrap-icons/font/bootstrap-icons.css";
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10793,4 +10794,7 @@ textarea.form-control-lg {
     margin-right: 1.5rem;
     margin-left: 1.5rem;
   }
+}
+.supporting-text {
+  width: 25rem;
 }
