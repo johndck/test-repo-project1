@@ -10822,3 +10822,7 @@ textarea.form-control-lg {
 .brandcontrastbackground {
   background-color: rgb(217, 209, 199);
 }
+
+.footer-icons {
+  width: 2rem;
+}
