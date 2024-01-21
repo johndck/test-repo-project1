@@ -4,7 +4,14 @@
 $primary: gray;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// importing google fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --bs-body-font-family: font-family: "Poppins", sans-serif;
+}
 
 // We can put custom code in here .....
 #nav {
@@ -48,4 +55,26 @@ $primary: gray;
 
 .supporting-text {
   width: 25rem;
+}
+
+.sunny-info-photo {
+  width: 25rem;
+}
+
+.sunny-footer {
+  background-color: rgba(217, 209, 199, 1);
+}
+
+.renewables {
+  width: 10rem;
+}
+
+.brandbackground {
+  background-color: rgba(255, 204, 0, 1);
+}
+
+// to create contrast colour buttons
+
+.brandcontrastbackground {
+  background-color: rgba(217, 209, 199, 1);
 }
