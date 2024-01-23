@@ -16,16 +16,20 @@ const geo_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${ukP
 const userPostcode = document.querySelector(".postcodeCaptureForm");
 const submitButton = document.querySelector("#checkPostcode");
 
+// function to remove spaces & capitalise postcode
+const cleanPostcode = (ukPostCode) => {
+  return ukPostCode.replace(/\s/g, "").toUpperCase();
+};
+
 // check if previous saved searches - if so add the div to the page
 
 // add the search again to the saved history buttons
-
-// add an event listener to the submit button
 
 submitButton.addEventListener("click", (evt) => {
   evt.preventDefault();
 
   ukPostCode = userPostcode.value.trim();
+  ukPostCode = cleanPostcode(ukPostCode);
 
   // add in some validation on the input - empty
   if (ukPostCode === "") {
@@ -149,7 +153,6 @@ async function fetchSolarInfo2(lat, lon) {
     resultsEL.classList.add("results");
     const resultsTitleEl = document.createElement("h3");
     resultsTitleEl.textContent = `Unfortunately we don't currently have any data for your location.`;
-
     resultsEL.append(resultsTitleEl);
     taglineEL.after(resultsEL);
     return;
@@ -196,4 +199,31 @@ async function fetchSolarInfo2(lat, lon) {
   taglineEL.after(resultsEL);
 
   userPostcode.value = "";
+  savePostcodeSearch(ukPostCode);
 }
+
+const savePostcodeSearch = (ukPostCode) => {
+  let savedSearches = JSON.parse(localStorage.getItem("PostcodeSearch"));
+
+  if (savedSearches == null) {
+    let newPostCodeSearch = JSON.stringify({ postcode: ukPostCode });
+    localStorage.setItem("PostcodeSearch", newPostCodeSearch);
+    // build search history
+  } else {
+    alert("found an existing save!");
+    for (let i = 0; i < savedSearches.length; i++) {
+      let existingSavedPostcode = savedSearches[i].postcode;
+      if (existingSavedPostcode === ukPostCode) {
+        return;
+      }
+    }
+    alert("creating new postcode to add");
+    newSearchEvent = { postcode: ukPostCode };
+
+    console.log(`savedsearch: ${savedSearches}`);
+    savedSearches.push(newSearchEvent);
+    let updateEvents = JSON.stringify(savedSearches);
+    localStorage.setItem("PostcodeSearch", updateEvents);
+    return;
+  }
+};
