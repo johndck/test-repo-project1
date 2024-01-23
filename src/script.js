@@ -114,8 +114,6 @@ const fetchLocation = (ukPostCode) => {
     });
 };
 
-// Testing async function
-
 async function fetchSolarInfo2(lat, lon) {
   try {
     const response = await fetch(
@@ -197,30 +195,26 @@ async function fetchSolarInfo2(lat, lon) {
 
   resultsEL.append(dataDivEl);
   taglineEL.after(resultsEL);
-
   userPostcode.value = "";
   savePostcodeSearch(ukPostCode);
 }
 
+// Adds the postcode into Local Storage.
 const savePostcodeSearch = (ukPostCode) => {
   let savedSearches = JSON.parse(localStorage.getItem("PostcodeSearch"));
 
   if (savedSearches == null) {
-    let newPostCodeSearch = JSON.stringify({ postcode: ukPostCode });
+    let newPostCodeSearch = JSON.stringify([{ postcode: ukPostCode }]);
     localStorage.setItem("PostcodeSearch", newPostCodeSearch);
     // build search history
   } else {
-    alert("found an existing save!");
     for (let i = 0; i < savedSearches.length; i++) {
       let existingSavedPostcode = savedSearches[i].postcode;
       if (existingSavedPostcode === ukPostCode) {
         return;
       }
     }
-    alert("creating new postcode to add");
     newSearchEvent = { postcode: ukPostCode };
-
-    console.log(`savedsearch: ${savedSearches}`);
     savedSearches.push(newSearchEvent);
     let updateEvents = JSON.stringify(savedSearches);
     localStorage.setItem("PostcodeSearch", updateEvents);
