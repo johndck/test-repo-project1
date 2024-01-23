@@ -16,6 +16,63 @@ const geo_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${ukP
 const userPostcode = document.querySelector(".postcodeCaptureForm");
 const submitButton = document.querySelector("#checkPostcode");
 
+// Create the search history - if available - recently searched
+
+const searchHistory = () => {
+  // check if there is a history stored
+
+  let checkHistory = JSON.parse(localStorage.getItem("PostcodeSearch"));
+  // if it is null, exit the function, as nothing to show
+  if (checkHistory == null) {
+    return;
+  } else {
+    // create the recent searches buttons
+    // create the recent searches div to hold recent search buttons
+
+    let recentSearchEl = document.createElement("div");
+    recentSearchEl.classList.add(
+      "border",
+      "d-flex",
+      "flex-column",
+      "align-items-center",
+      "previousSearches"
+    );
+    let recentSearchesTitle = document.createElement("h5");
+    recentSearchesTitle.textContent = "Recent searches:";
+    recentSearchEl.append(recentSearchesTitle);
+
+    // button holder
+    let buttonHolderEL = document.createElement("div");
+    buttonHolderEL.classList.add("border", "results-form");
+
+    // loop through the saved search to create the buttons, then add them to the buttonHolder element
+
+    for (let i = 0; i < checkHistory.length; i++) {
+      let historyButtonEL = document.createElement("button");
+      historyButtonEL.textContent = checkHistory[i].postcode;
+      historyButtonEL.setAttribute("data-custom", checkHistory[i].postcode);
+      buttonHolderEL.append(historyButtonEL);
+    }
+
+    if (document.querySelector(".previousSearches")) {
+      let resultsButtons = document.querySelector(".previousSearches");
+      while (resultsButtons.firstChild) {
+        resultsButtons.removeChild(resultsButtons.firstChild);
+      }
+
+      resultsButtons.append(buttonHolderEL);
+      return;
+    }
+
+    recentSearchEl.append(buttonHolderEL);
+    // add the recent search after the search form:
+    let searchFormEL = document.querySelector("#hero-content");
+    searchFormEL.after(recentSearchEl);
+  }
+};
+
+searchHistory();
+
 // function to remove spaces & capitalise postcode
 const cleanPostcode = (ukPostCode) => {
   return ukPostCode.replace(/\s/g, "").toUpperCase();
@@ -197,6 +254,8 @@ async function fetchSolarInfo2(lat, lon) {
   taglineEL.after(resultsEL);
   userPostcode.value = "";
   savePostcodeSearch(ukPostCode);
+
+  searchHistory();
 }
 
 // Adds the postcode into Local Storage.

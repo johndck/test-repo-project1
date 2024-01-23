@@ -59,7 +59,7 @@
         "
       >
         <div class="container hero">
-          <div class="row">
+          <div class="row border">
 
             <!-- Modal for postcode not found-->
             <div class="modal" tabindex="-1" id="postcodefail">
@@ -79,28 +79,19 @@
                 </div>
               </div>
             </div>
-
-
-
-
-
+            <!-- end of modal-->
 
             <div
-              class="col d-flex flex-column justify-content-center align-items-center postcode-search"
+              class="col d-flex flex-column justify-content-center align-items-center postcode-search border" id="hero-content"
             >
               <div class="tagline text-white text-center" id="tagline">
                 <h1><strong>Confused about Solar power?</strong></h1>
                 <h3>See the potential of solar for your home</h3>
               </div>
 
-              <!-- 
-                <div class="results">
-                <p>results</p>
-              </div>
-              -->
               
 
-              <form class="postcode-form d-flex flex-column align-items-center mb-5">
+              <form class="postcode-form d-flex flex-column align-items-center">
                 <div class="mb-3 ">
                   <input
                     type="text"
@@ -116,7 +107,21 @@
 
                 <button type="submit" class="brandbtn" id="checkPostcode">Submit</button>
               </form>
+              
             </div>
+
+            <!--
+              <div class="border d-flex justify-content-center previousSearches">
+              <div class="d-flex flex-column border results-form">
+                <p>Recent searches</p>
+                <p>Holding</p>
+              </div>
+              
+            </div>
+            -->
+           
+
+
           </div>
         </div>
       </div>

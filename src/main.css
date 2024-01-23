@@ -10790,6 +10790,11 @@ textarea.form-control-lg {
   padding: 3rem;
 }
 
+.results-form {
+  width: 25rem;
+  padding: 1rem;
+}
+
 .brandbtn {
   background: rgb(255, 204, 0);
   padding: 0.3rem;
