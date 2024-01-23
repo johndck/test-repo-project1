@@ -48,7 +48,8 @@
     </header>
 
     <main>
-      <div
+      <section>
+        <div
         class="container-fluid"
         style="
           background-image: url('/src/assets/solarRoof2.jpg');
@@ -59,34 +60,72 @@
       >
         <div class="container hero">
           <div class="row">
+
+            <!-- Modal for postcode not found-->
+            <div class="modal" tabindex="-1" id="postcodefail">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Searching for your postcode</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>We're sorry, we could not find your postcode.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
             <div
               class="col d-flex flex-column justify-content-center align-items-center postcode-search"
             >
-              <div class="tagline text-white text-center">
+              <div class="tagline text-white text-center" id="tagline">
                 <h1><strong>Confused about Solar power?</strong></h1>
                 <h3>See the potential of solar for your home</h3>
               </div>
 
-              <form class="postcode-form d-flex flex-column align-items-center">
-                <div class="input-group mb-3">
+              <!-- 
+                <div class="results">
+                <p>results</p>
+              </div>
+              -->
+              
+
+              <form class="postcode-form d-flex flex-column align-items-center mb-5">
+                <div class="mb-3 ">
                   <input
                     type="text"
-                    class="form-control"
-                    placeholder="Enter your postcode"
+                    maxlength="8"
+                    minlength="5"
+                    class="postcodeCaptureForm postcode-input"
+                    placeholder="Your postcode"
                     aria-label="Building postcode"
                     aria-describedby="basic-addon2"
                   />
-                  <span class="input-group-text brandbtn" id="basic-addon2"
-                    >Postcode</span
-                  >
+                
                 </div>
 
-                <button type="submit" class="btn brandbtn">Submit</button>
+                <button type="submit" class="brandbtn" id="checkPostcode">Submit</button>
               </form>
             </div>
           </div>
         </div>
       </div>
+
+      </section>
+      
+
+
+
 
       <!-- how Sunny works section -->
       <!-- margin top from hero section = ??? -->
@@ -354,5 +393,6 @@
         </div>
       </section>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

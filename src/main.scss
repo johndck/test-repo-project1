@@ -25,7 +25,8 @@ $primary: gray;
 //}
 
 .hero {
-  height: 80vh;
+  min-height: 75vh;
+  height: auto;
 }
 
 .postcode-search {
@@ -42,7 +43,28 @@ $primary: gray;
 
 .brandbtn {
   background: rgba(255, 204, 0, 1);
+  padding: 0.3rem;
+  padding-left:1.5rem ;
+  padding-right: 1.5rem;
+  border-radius: 0.5rem;
+  font-family: "Poppins", sans-serif;
 }
+
+.postcode-input{
+  width: 11rem;
+  font-family: "Poppins", sans-serif;
+  height: 2rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.postcode-input:focus{
+  border-color:rgba(255, 204, 0, 1) ;
+}
+
+
 
 @media screen and (max-width: 576px) {
   #nav {
@@ -82,3 +104,19 @@ $primary: gray;
 .footer-icons{
   width: 2.2rem;
 }
+
+.results {
+  width: 26rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0.2rem solid rgba(255, 204, 0, 1);
+  padding: 2.5rem;
+  box-shadow: 3px 3px 3px 0 rgba(255, 204, 0, 1);
+}
+
+.results-view{
+  display: none;
+  
+}
+
