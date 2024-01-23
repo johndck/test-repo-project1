@@ -214,7 +214,6 @@ async function fetchSolarInfo2(lat, lon) {
 
     // show the no possible results display on the page
 
-    // Add the postcode search to local storage
   }
   const taglineEL = document.querySelector("#tagline");
   const resultsEL = document.createElement("div");
