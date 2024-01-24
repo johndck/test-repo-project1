@@ -3,7 +3,7 @@
 
 $primary: gray;
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
 
 // importing google fonts
 
@@ -96,12 +96,12 @@ $primary: gray;
   }
 
   .results {
-    width: 24rem;
+    width: 20rem;
   }
 }
 
 .supporting-text {
-  width: 25rem;
+  width: 20rem;
 }
 
 .sunny-info-photo {

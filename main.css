@@ -10834,9 +10834,18 @@ textarea.form-control-lg {
     margin-right: 1.5rem;
     margin-left: 1.5rem;
   }
+  #checkPostcode {
+    margin-top: 2rem;
+    padding: 0.2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .results {
+    width: 20rem;
+  }
 }
 .supporting-text {
-  width: 25rem;
+  width: 20rem;
 }
 
 .sunny-info-photo {
