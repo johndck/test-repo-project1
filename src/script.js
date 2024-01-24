@@ -60,12 +60,41 @@ const searchHistory = () => {
         resultsButtons.removeChild(resultsButtons.firstChild);
       }
 
+      // Add the title again
+      let recentSearchesTitle = document.createElement("h5");
+      recentSearchesTitle.textContent = "Recent searches:";
+      let clearSearchLink = document.createElement("a");
+      clearSearchLink.textContent = "Clear";
+      //clearSearchLink.classList.add("brandbtn");
+      clearSearchLink.setAttribute("href", "#");
+      resultsButtons.append(recentSearchesTitle);
       resultsButtons.append(buttonHolderEL);
+      resultsButtons.append(clearSearchLink);
+
+      clearSearchLink.addEventListener("click", (evt) => {
+        // Clear the recent searches from localStorage
+        evt.preventDefault();
+        localStorage.removeItem("PostcodeSearch");
+        // Remove the recent searches container from the DOM
+        resultsButtons.remove();
+      });
       return;
     }
 
     recentSearchEl.append(buttonHolderEL);
-    // add the recent search after the search form:
+    let clearSearchLink = document.createElement("a");
+    clearSearchLink.textContent = "Clear";
+    //clearSearchLink.classList.add("brandbtn");
+    clearSearchLink.setAttribute("href", "#");
+    recentSearchEl.append(clearSearchLink);
+    clearSearchLink.addEventListener("click", (evt) => {
+      // Clear the recent searches from localStorage
+      evt.preventDefault();
+      localStorage.removeItem("PostcodeSearch");
+      // Remove the recent searches container from the DOM
+      recentSearchEl.textContent = "";
+      recentSearchEl.remove();
+    });
     let searchFormEL = document.querySelector("#hero-content");
     searchFormEL.after(recentSearchEl);
   }
@@ -130,6 +159,21 @@ submitButton.addEventListener("click", (evt) => {
   }
 
   fetchLocation(ukPostCode);
+});
+
+// add the event listener for when there are recent history buttons on the page.
+// having to use generic event listener as everything is dynamic.
+// so just listening out for click near target area
+
+document.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON" && e.target.closest(".previousSearches")) {
+    ukPostCode = e.target.textContent;
+    const checkResultsEL = document.querySelector(".results");
+    if (checkResultsEL) {
+      checkResultsEL.remove();
+    }
+    fetchLocation(ukPostCode);
+  }
 });
 
 const fetchLocation = (ukPostCode) => {
@@ -213,7 +257,6 @@ async function fetchSolarInfo2(lat, lon) {
     return;
 
     // show the no possible results display on the page
-
   }
   const taglineEL = document.querySelector("#tagline");
   const resultsEL = document.createElement("div");
