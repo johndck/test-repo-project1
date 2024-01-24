@@ -80,26 +80,6 @@ $primary: gray;
   border-color: rgba(255, 204, 0, 1);
 }
 
-@media screen and (max-width: 576px) {
-  #nav {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
-    //font-size: 3.75rem;
-    //line-height: 4.125rem;
-  }
-
-  #checkPostcode {
-    margin-top: 2rem;
-    padding: 0.2rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  .results {
-    width: 10rem;
-  }
-}
-
 .supporting-text {
   width: 20rem;
 }
@@ -131,7 +111,7 @@ $primary: gray;
 }
 
 .results {
-  width: 27rem;
+  width: 24rem;
   background-color: rgba(255, 255, 255, 0.8);
   margin-top: 1rem;
   margin-bottom: 0.2rem;
@@ -150,4 +130,25 @@ $primary: gray;
 .previousSearches {
   //background-color: rgba(255, 255, 255, 0.4);
   margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  #nav {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    //font-size: 3.75rem;
+    //line-height: 4.125rem;
+  }
+
+  #checkPostcode {
+    margin-top: 2rem;
+    padding: 0.2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .results {
+    width: 20rem;
+    background-color: white;
+  }
 }

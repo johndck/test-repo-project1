@@ -10829,21 +10829,6 @@ textarea.form-control-lg {
   border-color: rgb(255, 204, 0);
 }
 
-@media screen and (max-width: 576px) {
-  #nav {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
-  }
-  #checkPostcode {
-    margin-top: 2rem;
-    padding: 0.2rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-  .results {
-    width: 10rem;
-  }
-}
 .supporting-text {
   width: 20rem;
 }
@@ -10873,7 +10858,7 @@ textarea.form-control-lg {
 }
 
 .results {
-  width: 27rem;
+  width: 24rem;
   background-color: rgba(255, 255, 255, 0.8);
   margin-top: 1rem;
   margin-bottom: 0.2rem;
@@ -10890,4 +10875,21 @@ textarea.form-control-lg {
 
 .previousSearches {
   margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  #nav {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  #checkPostcode {
+    margin-top: 2rem;
+    padding: 0.2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .results {
+    width: 20rem;
+    background-color: white;
+  }
 }
