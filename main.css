@@ -10816,7 +10816,7 @@ textarea.form-control-lg {
 }
 
 .postcode-input {
-  width: 11rem;
+  width: 12rem;
   font-family: "Poppins", sans-serif;
   height: 2rem;
   padding: 1rem;
@@ -10884,12 +10884,14 @@ textarea.form-control-lg {
   }
   #checkPostcode {
     margin-top: 2rem;
-    padding: 0.2rem;
+    padding: 0.6rem;
     padding-left: 3rem;
     padding-right: 3rem;
   }
   .results {
-    width: 20rem;
-    background-color: white;
+    width: 22rem;
+  }
+  .postcode-input {
+    padding: 1.5rem;
   }
 }
