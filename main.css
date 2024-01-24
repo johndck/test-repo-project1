@@ -10894,4 +10894,11 @@ textarea.form-control-lg {
   .postcode-input {
     padding: 1.5rem;
   }
+  .results-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .results-btn {
+    margin-right: 1rem;
+  }
 }
