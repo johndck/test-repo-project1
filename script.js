@@ -199,7 +199,7 @@ document.addEventListener("click", (e) => {
 
 const fetchLocation = (ukPostCode) => {
   fetch(
-    `https:maps.googleapis.com/maps/api/geocode/json?address=${ukPostCode}&key=AIzaSyBSz3w7EQnyHPXu2qDA4hz71uCVntYBug8`
+    `https://maps.googleapis.com/maps/api/geocode/json?address=${ukPostCode}&key=AIzaSyBSz3w7EQnyHPXu2qDA4hz71uCVntYBug8`
   )
     .then((response) => {
       // Error handling
