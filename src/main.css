@@ -10767,7 +10767,8 @@ textarea.form-control-lg {
   }
 }
 :root {
-  --bs-body-font-family: font-family: "Poppins", sans-serif;
+  --bs-body-font-family: "Poppins", sans-serif;
+  --bs-link-color: white;
 }
 
 #nav {
@@ -10777,7 +10778,7 @@ textarea.form-control-lg {
 }
 
 .hero {
-  min-height: 75vh;
+  min-height: 70vh;
   height: auto;
 }
 
@@ -10792,14 +10793,24 @@ textarea.form-control-lg {
 
 .results-form {
   width: 25rem;
-  padding: 1rem;
+  padding: 0rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.results-btn {
+  color: white;
+  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  border: none;
+  background-color: rgb(149, 145, 83);
+  cursor: pointer;
 }
 
 .brandbtn {
   background: rgb(255, 204, 0);
-  padding: 0.3rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 0.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   border-radius: 0.5rem;
   font-family: "Poppins", sans-serif;
 }
@@ -10853,15 +10864,21 @@ textarea.form-control-lg {
 }
 
 .results {
-  width: 26rem;
-  background-color: rgba(255, 255, 255, 0.7);
+  width: 27rem;
+  background-color: rgba(255, 255, 255, 0.8);
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
+  outline: 2px solid rgb(217, 109, 0);
   border: 0.2rem solid rgb(255, 204, 0);
-  padding: 2.5rem;
-  box-shadow: 3px 3px 3px 0 rgb(255, 204, 0);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 
 .results-view {
   display: none;
+}
+
+.previousSearches {
+  margin-bottom: 0.5rem;
 }

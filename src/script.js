@@ -7,6 +7,21 @@ let panelNumber;
 let yearlyEnergyDcKwh;
 let panelCapacity;
 let arrayAreaMeters;
+let isClicked = false;
+let previousScroll = 0;
+// hide the nav bar on scroll
+
+window.addEventListener("scroll", function () {
+  let currentScroll = window.scrollY;
+  let navBarEl = document.querySelector("#topNav");
+
+  if (currentScroll > 20 && currentScroll > previousScroll) {
+    navBarEl.style.display = "none";
+  } else if (currentScroll < previousScroll) {
+    navBarEl.style.display = "";
+  }
+  previousScroll = currentScroll;
+});
 
 // get the lat & long details
 
@@ -31,19 +46,19 @@ const searchHistory = () => {
 
     let recentSearchEl = document.createElement("div");
     recentSearchEl.classList.add(
-      "border",
       "d-flex",
       "flex-column",
-      "align-items-center",
-      "previousSearches"
+      "align-items-start",
+      "previousSearches",
+      "text-white"
     );
-    let recentSearchesTitle = document.createElement("h5");
+    let recentSearchesTitle = document.createElement("h7");
     recentSearchesTitle.textContent = "Recent searches:";
     recentSearchEl.append(recentSearchesTitle);
 
     // button holder
     let buttonHolderEL = document.createElement("div");
-    buttonHolderEL.classList.add("border", "results-form");
+    buttonHolderEL.classList.add("results-form");
 
     // loop through the saved search to create the buttons, then add them to the buttonHolder element
 
@@ -51,6 +66,7 @@ const searchHistory = () => {
       let historyButtonEL = document.createElement("button");
       historyButtonEL.textContent = checkHistory[i].postcode;
       historyButtonEL.setAttribute("data-custom", checkHistory[i].postcode);
+      historyButtonEL.classList.add("results-btn");
       buttonHolderEL.append(historyButtonEL);
     }
 
@@ -65,7 +81,6 @@ const searchHistory = () => {
       recentSearchesTitle.textContent = "Recent searches:";
       let clearSearchLink = document.createElement("a");
       clearSearchLink.textContent = "Clear";
-      //clearSearchLink.classList.add("brandbtn");
       clearSearchLink.setAttribute("href", "#");
       resultsButtons.append(recentSearchesTitle);
       resultsButtons.append(buttonHolderEL);
@@ -86,6 +101,7 @@ const searchHistory = () => {
     clearSearchLink.textContent = "Clear";
     //clearSearchLink.classList.add("brandbtn");
     clearSearchLink.setAttribute("href", "#");
+    //clearSearchLink.classList.add("link-white");
     recentSearchEl.append(clearSearchLink);
     clearSearchLink.addEventListener("click", (evt) => {
       // Clear the recent searches from localStorage
@@ -96,7 +112,7 @@ const searchHistory = () => {
       recentSearchEl.remove();
     });
     let searchFormEL = document.querySelector("#hero-content");
-    searchFormEL.after(recentSearchEl);
+    searchFormEL.append(recentSearchEl);
   }
 };
 
@@ -113,6 +129,11 @@ const cleanPostcode = (ukPostCode) => {
 
 submitButton.addEventListener("click", (evt) => {
   evt.preventDefault();
+
+  submitButton.disabled = true;
+  setTimeout(() => {
+    submitButton.disabled = false;
+  }, 300);
 
   ukPostCode = userPostcode.value.trim();
   ukPostCode = cleanPostcode(ukPostCode);
@@ -251,7 +272,7 @@ async function fetchSolarInfo2(lat, lon) {
     const resultsEL = document.createElement("div");
     resultsEL.classList.add("results");
     const resultsTitleEl = document.createElement("h3");
-    resultsTitleEl.textContent = `Unfortunately we don't currently have any data for your location.`;
+    resultsTitleEl.textContent = `Unfortunately we don't currently have any data for your location in this release.`;
     resultsEL.append(resultsTitleEl);
     taglineEL.after(resultsEL);
     return;
@@ -268,7 +289,7 @@ async function fetchSolarInfo2(lat, lon) {
   const maxSunshineHoursEl = document.createElement("p");
   maxSunshineHoursEl.textContent = `Total yearly sunshine hours: ${Math.round(
     maxSunshineHoursPerYear
-  )}`;
+  )} hrs`;
 
   const panelNumberEL = document.createElement("p");
   panelNumberEL.textContent = `Estimated panel potential: ${panelNumber}`;
