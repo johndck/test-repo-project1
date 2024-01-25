@@ -64,13 +64,14 @@ $primary: gray;
   padding-right: 2rem;
   border-radius: 0.5rem;
   font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 .postcode-input {
-  width: 12rem;
+  width: 15rem;
   font-family: "Poppins", sans-serif;
   height: 2rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.3rem;
   border: none;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
@@ -131,6 +132,8 @@ $primary: gray;
   //background-color: rgba(255, 255, 255, 0.4);
   margin-bottom: 0.5rem;
 }
+
+// Here are the styles for mobile
 
 @media screen and (max-width: 576px) {
   #nav {
