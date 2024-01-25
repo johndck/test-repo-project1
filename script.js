@@ -133,7 +133,7 @@ submitButton.addEventListener("click", (evt) => {
   submitButton.disabled = true;
   setTimeout(() => {
     submitButton.disabled = false;
-  }, 300);
+  }, 1000);
 
   ukPostCode = userPostcode.value.trim();
   ukPostCode = cleanPostcode(ukPostCode);
