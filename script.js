@@ -77,7 +77,7 @@ const searchHistory = () => {
       }
 
       // Add the title again
-      let recentSearchesTitle = document.createElement("h5");
+      let recentSearchesTitle = document.createElement("h7");
       recentSearchesTitle.textContent = "Recent searches:";
       let clearSearchLink = document.createElement("a");
       clearSearchLink.textContent = "Clear";
@@ -112,7 +112,7 @@ const searchHistory = () => {
       recentSearchEl.remove();
     });
     let searchFormEL = document.querySelector("#hero-content");
-    searchFormEL.append(recentSearchEl);
+    searchFormEL.appendChild(recentSearchEl);
   }
 };
 

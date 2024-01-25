@@ -10777,6 +10777,10 @@ textarea.form-control-lg {
   padding: 1rem;
 }
 
+.container {
+  padding: 5px;
+}
+
 .hero {
   min-height: 70vh;
   height: auto;
@@ -10879,10 +10883,6 @@ textarea.form-control-lg {
 }
 
 @media screen and (max-width: 576px) {
-  #nav {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
-  }
   #checkPostcode {
     margin-top: 2rem;
     padding: 0.6rem;
@@ -10901,5 +10901,37 @@ textarea.form-control-lg {
   }
   .results-btn {
     margin-right: 1rem;
+  }
+  .brandbtn {
+    outline-color: black;
+  }
+  .previousSearches {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    max-width: 20rem;
+  }
+}
+@media screen and (max-width: 459px) {
+  #topNav {
+    width: 18rem;
+  }
+  .results {
+    width: 17rem;
+  }
+  .postcode-input {
+    padding: 1.5rem;
+  }
+  .results-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .results-btn {
+    margin-right: 1rem;
+  }
+  .brandbtn {
+    outline-color: black;
+  }
+  .previousSearches {
+    max-width: 75%;
   }
 }

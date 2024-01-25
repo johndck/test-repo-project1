@@ -15,10 +15,15 @@ $primary: gray;
 }
 
 // We can put custom code in here .....
+
 #nav {
   background-color: rgba(255, 204, 0, 1);
   border-radius: 1rem;
   padding: 1rem;
+}
+
+.container {
+  padding: 5px;
 }
 
 //#navbarNav {
@@ -136,13 +141,6 @@ $primary: gray;
 // Here are the styles for mobile
 
 @media screen and (max-width: 576px) {
-  #nav {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
-    //font-size: 3.75rem;
-    //line-height: 4.125rem;
-  }
-
   #checkPostcode {
     margin-top: 2rem;
     padding: 0.6rem;
@@ -165,5 +163,51 @@ $primary: gray;
 
   .results-btn {
     margin-right: 1rem;
+  }
+
+  .brandbtn {
+    outline-color: black;
+  }
+
+  .previousSearches {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    max-width: 20rem;
+  }
+}
+
+// for very thin screens
+
+@media screen and (max-width: 459px) {
+  #topNav {
+    width: 18rem;
+
+    //font-size: 3.75rem;
+    //line-height: 4.125rem;
+  }
+
+  .results {
+    width: 17rem;
+  }
+
+  .postcode-input {
+    padding: 1.5rem;
+  }
+
+  .results-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .results-btn {
+    margin-right: 1rem;
+  }
+
+  .brandbtn {
+    outline-color: black;
+  }
+
+  .previousSearches {
+    max-width: 75%;
   }
 }
