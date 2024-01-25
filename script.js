@@ -135,6 +135,11 @@ submitButton.addEventListener("click", (evt) => {
     submitButton.disabled = false;
   }, 1000);
 
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
   ukPostCode = userPostcode.value.trim();
   ukPostCode = cleanPostcode(ukPostCode);
 
@@ -195,6 +200,11 @@ document.addEventListener("click", (e) => {
     }
     fetchLocation(ukPostCode);
   }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
 
 const fetchLocation = (ukPostCode) => {

@@ -36,10 +36,10 @@
           >
             <ul class="navbar-nav align-items-end">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="#hero-top">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#hero-top">About</a>
               </li>
             </ul>
           </div>
@@ -60,7 +60,7 @@
           background-position: center;
         "
       >
-        <div class="container hero">
+        <div class="container hero" id="hero-top">
           <div class="row">
 
             <!-- Modal for postcode not found-->
@@ -109,6 +109,13 @@
               </form>
             
             </div>
+
+            <div class="row mt-5">
+              <div class="col text-white">
+                <p> Beta version 0.9.1 release of Sunny | Jan 2024</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -331,6 +338,7 @@
                   <div class="input-group mb-3">
                     <input
                       type="text"
+                      disabled
                       class="form-control"
                       placeholder="Enter your postcode"
                       aria-label="Building postcode"
@@ -343,7 +351,7 @@
                     >
                   </div>
 
-                  <button type="submit" class="btn brandcontrastbackground">
+                  <button type="submit" disabled class="btn brandcontrastbackground">
                     Submit
                   </button>
                 </form>
